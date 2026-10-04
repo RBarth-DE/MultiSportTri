@@ -1,22 +1,32 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""fit2multisport.py — MultiSportTri-FIT in ein echtes Multisport-FIT konvertieren.
+"""fit2multisport.py — convert a MultiSportTri FIT into a real multisport FIT.
 
-Liest die von MultiSportTri aufgezeichnete FIT-Datei (eine Session, 5 Runden
-mit den Phasen Schwimmen / Wechsel 1 / Radfahren / Wechsel 2 / Laufen) und
-erzeugt daraus eine Multisport-FIT-Datei mit fünf Session-Abschnitten und den
-korrekten Sportarten. Garmin Connect zeigt die importierte Datei dann wie ein
-natives Triathlon-Event (Sportarten pro Abschnitt, Wechsel, Gesamtauswertung).
+Reads the FIT recorded by MultiSportTri (one session, 5 laps with the phases
+swim / transition 1 / bike / transition 2 / run) and writes a multisport FIT
+with five session legs and the matching sports. Garmin Connect then shows
+the imported file like a native triathlon event (sport per leg, transitions,
+overall summary).
 
-Benutzung:
-    python3 fit2multisport.py aktivitaet.fit
-    python3 fit2multisport.py aktivitaet.fit triathlon_multisport.fit
+Usage:
+    python3 fit2multisport.py activity.fit
+    python3 fit2multisport.py activity.fit triathlon_multisport.fit
 
-Abhängigkeiten: keine (reines Python 3, nur Standardbibliothek).
-Hinweis: Die CGM-Glukosekurve bleibt in der Originaldatei erhalten; die
-Multisport-Datei enthält die Sport-Struktur (Positionen, HF, Kadenz, Distanz).
+Messages follow the system language (LC_ALL / LANG: de* -> German, else
+English), same rule as MultiSportTri's on-watch UI.
+
+No dependencies (Python 3 standard library only).
+Note: the CGM glucose curve stays in the original file; the multisport file
+carries the sport structure (position, HR, cadence, distance).
+
+---
+DE: Konvertiert die MultiSportTri-FIT in eine Multisport-FIT mit fünf
+Abschnitten (Schwimmen / Wechsel 1 / Radfahren / Wechsel 2 / Laufen).
+Ausgabe und Phasennamen folgen der Systemsprache (de -> Deutsch, sonst
+Englisch), wie in der Watch-App.
 """
 
+import os
 import struct
 import sys
 
@@ -38,7 +48,25 @@ SPORT_TRANSITION = 3
 SPORT_CYCLING = 2
 SPORT_RUNNING = 1
 
-# (sport, sub_sport) pro Phase: Schwimmen (Freiwasser), Wechsel 1, Rad, Wechsel 2, Laufen
+# ---------------------------------------------------------------------------
+# Language (same rule as source/L10n.mc: German or English fallback)
+# ---------------------------------------------------------------------------
+
+def is_german():
+    lang = (os.environ.get("LC_ALL") or os.environ.get("LC_MESSAGES")
+            or os.environ.get("LANG") or "")
+    return lang.lower().startswith("de")
+
+
+_DE = is_german()
+
+
+def tr(de, eng):
+    """German when the environment language is German, else English."""
+    return de if _DE else eng
+
+
+# (sport, sub_sport) per phase: swim (open water), T1, bike, T2, run
 LEG_PROFILES = [
     (SPORT_SWIM, 18),
     (SPORT_TRANSITION, 0),
@@ -46,7 +74,13 @@ LEG_PROFILES = [
     (SPORT_TRANSITION, 0),
     (SPORT_RUNNING, 0),
 ]
-LEG_NAMES = ["Schwimmen", "Wechsel 1", "Radfahren", "Wechsel 2", "Laufen"]
+LEG_NAMES = [
+    tr("Schwimmen", "Swim"),
+    tr("Wechsel 1", "Transition 1"),
+    tr("Radfahren", "Bike"),
+    tr("Wechsel 2", "Transition 2"),
+    tr("Laufen", "Run"),
+]
 
 # Base-Types
 BASE_TYPE_SIZE = {
@@ -91,7 +125,7 @@ def parse_fit(path):
     with open(path, "rb") as fh:
         data = fh.read()
     if len(data) < 12 or data[8:12] != b".FIT":
-        raise ValueError("%s ist keine FIT-Datei" % path)
+        raise ValueError(tr("%s ist keine FIT-Datei", "%s is not a FIT file") % path)
     # Daten beginnen nach dem Header (12 oder 14 Byte, gemaess
     # Groessenfeld). Eine optionale CRC steht am Dateiende.
     header_size = data[0]
@@ -143,7 +177,8 @@ def parse_fit(path):
             ts = last_ts
             gnum, fields = definitions.get(local, (None, []))
             if gnum is None:
-                raise ValueError("Unbekannte Definition (local %d)" % local)
+                raise ValueError(tr("Unbekannte Definition (local %d)",
+                                    "Unknown definition (local %d)") % local)
             values = {}
             for (fnum, size, btype) in fields:
                 if fnum == 253:
@@ -186,7 +221,8 @@ def parse_fit(path):
                 # Data Message
                 gnum, fields = definitions.get(local, (None, []))
                 if gnum is None:
-                    raise ValueError("Unbekannte Definition (local %d)" % local)
+                    raise ValueError(tr("Unbekannte Definition (local %d)",
+                                        "Unknown definition (local %d)") % local)
                 values = {}
                 for (fnum, size, btype) in fields:
                     raw = body[i:i + size]
@@ -380,7 +416,8 @@ def convert(src, dst):
 
     records = [v for (g, v, ts) in msgs if g == MSG_RECORD and v.get(253) is not None]
     if not records:
-        raise ValueError("Keine Record-Messages in %s gefunden" % src)
+        raise ValueError(tr("Keine Record-Messages in %s gefunden",
+                            "No record messages found in %s") % src)
     records.sort(key=lambda v: v[253])
 
     laps = sorted(v.get(2) for (g, v, ts) in msgs
@@ -399,7 +436,8 @@ def convert(src, dst):
         legs.append([r for r in records if start <= r[253] < end])
     legs = [l for l in legs if l]
     if len(legs) > len(LEG_PROFILES):
-        print("Warnung: %d Runden gefunden (erwartet max. 5) — überzählige werden als Laufen gewertet."
+        print(tr("Warnung: %d Runden gefunden (erwartet max. 5) — überzählige werden als Laufen gewertet.",
+                 "Warning: found %d laps (expected at most 5) — extras are treated as run.")
               % len(legs))
 
     out_legs = []
@@ -487,13 +525,14 @@ def convert(src, dst):
 
     write_fit(dst, out_legs, {})
 
-    print("Multisport-FIT geschrieben: %s" % dst)
+    print(tr("Multisport-FIT geschrieben: %s", "Multisport FIT written: %s") % dst)
+    hr_label = tr("HF Ø", "HR avg")
     for k, leg in enumerate(out_legs):
         name = LEG_NAMES[min(k, len(LEG_NAMES) - 1)]
         mins = leg["elapsed"] // 60
         secs = leg["elapsed"] % 60
-        print("  %-10s %02d:%02d  %.2f km  HF Ø %s" % (
-            name, mins, secs, leg["distance"] / 1000.0,
+        print("  %-12s %02d:%02d  %.2f km  %s %s" % (
+            name, mins, secs, leg["distance"] / 1000.0, hr_label,
             str(leg["avg_hr"]) if leg["avg_hr"] else "-"))
 
 
