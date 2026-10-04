@@ -1,0 +1,21 @@
+# Build output
+bin/
+*.prg
+*.iq
+*.debug.xml
+
+# Personal activity / health data
+*.fit
+
+# IDE / tooling
+.idea/
+__pycache__/
+*.pyc
+
+# Raw screenshots (only the processed .jpg are for the store)
+screenshots/*.BMP
+
+# Keys must never leave the machine (none in-tree, belt and braces)
+*.der
+*.pem
+*private_key*

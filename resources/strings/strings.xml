@@ -1,0 +1,68 @@
+<strings>
+    <string id="AppName">MultiSportTri</string>
+
+    <!-- Phases -->
+    <string id="PhaseSwim">SWIM</string>
+    <string id="PhaseTransition1">TRANSITION 1</string>
+    <string id="PhaseBike">BIKE</string>
+    <string id="PhaseTransition2">TRANSITION 2</string>
+    <string id="PhaseRun">RUN</string>
+
+    <!-- Data field labels (settings and screen) -->
+    <string id="FieldHeartRate">Heart Rate</string>
+    <string id="FieldCadence">Cadence</string>
+    <string id="FieldDistance">Distance</string>
+    <string id="FieldTime">Time</string>
+    <string id="FieldPace">Pace</string>
+    <string id="FieldSpeed">Speed</string>
+    <string id="FieldCgm">CGM Glucose</string>
+    <string id="FieldNone">- Off -</string>
+
+    <!-- Short labels used on the 2x2 data grid -->
+    <string id="LabelHeartRate">HR</string>
+    <string id="LabelCadence">CADENCE</string>
+    <string id="LabelDistance">DISTANCE</string>
+    <string id="LabelTime">TIME</string>
+    <string id="LabelPace">PACE</string>
+    <string id="LabelSpeed">SPEED</string>
+    <string id="LabelTotalDistance">TOTAL DIST.</string>
+    <string id="LabelNextPhase">NEXT</string>
+
+    <!-- Status / hints -->
+    <string id="HintStart">Press START to begin</string>
+    <string id="HintLap">Back button: next phase</string>
+    <string id="HintStopped">START: resume · MENU: options</string>
+    <string id="HintSaved">Saved ✓ · START: new</string>
+    <string id="CadenceNoSensor">Cadence: no sensor</string>
+    <string id="CadenceSearching">Cadence: searching</string>
+    <string id="NoGps">GPS: none</string>
+
+    <!-- Menus -->
+    <string id="MenuSave">Save &amp; End</string>
+    <string id="MenuDiscard">Discard Recording</string>
+    <string id="MenuResume">Resume</string>
+    <string id="MenuCancel">Cancel</string>
+    <string id="MenuNew">New Activity</string>
+    <string id="MenuTitle">MultiSportTri</string>
+
+    <!-- Settings groups -->
+    <string id="SettingsSwimTitle">Swim - Data Fields</string>
+    <string id="SettingsBikeTitle">Bike - Data Fields</string>
+    <string id="SettingsRunTitle">Run - Data Fields</string>
+    <string id="SettingsSlot1">Field 1</string>
+    <string id="SettingsSlot2">Field 2</string>
+    <string id="SettingsSlot3">Field 3</string>
+    <string id="SettingsSlot4">Field 4</string>
+
+    <!-- FIT developer field metadata -->
+    <string id="FitPhaseLabel">Phase</string>
+    <string id="FitPhaseLapLabel">Phase (Lap)</string>
+    <string id="FitPhaseChart">Phase</string>
+    <string id="FitPhaseUnits">-</string>
+    <string id="FitGlucoseChart">Glucose</string>
+    <string id="FitGlucoseLabel">Glucose</string>
+    <string id="FitGlucoseUnits">mg/dl</string>
+    <string id="FitCadenceChart">Cadence</string>
+    <string id="FitCadenceLabel">Cadence</string>
+    <string id="FitCadenceUnits">rpm</string>
+</strings>

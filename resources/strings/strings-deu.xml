@@ -1,0 +1,68 @@
+<strings>
+    <string id="AppName">MultiSportTri</string>
+
+    <!-- Phasen -->
+    <string id="PhaseSwim">SCHWIMMEN</string>
+    <string id="PhaseTransition1">WECHSEL 1</string>
+    <string id="PhaseBike">RADFAHREN</string>
+    <string id="PhaseTransition2">WECHSEL 2</string>
+    <string id="PhaseRun">LAUFEN</string>
+
+    <!-- Datenfeld-Namen (Einstellungen und Anzeige) -->
+    <string id="FieldHeartRate">Herzfrequenz</string>
+    <string id="FieldCadence">Trittfrequenz</string>
+    <string id="FieldDistance">Distanz</string>
+    <string id="FieldTime">Zeit</string>
+    <string id="FieldPace">Pace</string>
+    <string id="FieldSpeed">Geschwindigkeit</string>
+    <string id="FieldCgm">CGM Glukose</string>
+    <string id="FieldNone">- Aus -</string>
+
+    <!-- Kurzbeschriftungen im 2x2-Datenfeldraster -->
+    <string id="LabelHeartRate">HF</string>
+    <string id="LabelCadence">KADENZ</string>
+    <string id="LabelDistance">DISTANZ</string>
+    <string id="LabelTime">ZEIT</string>
+    <string id="LabelPace">PACE</string>
+    <string id="LabelSpeed">GESCHW.</string>
+    <string id="LabelTotalDistance">DISTANZ GES.</string>
+    <string id="LabelNextPhase">NÄCHSTE</string>
+
+    <!-- Status / Hinweise -->
+    <string id="HintStart">START drücken zum Beginnen</string>
+    <string id="HintLap">Rücktaste: nächste Phase</string>
+    <string id="HintStopped">START: weiter · MENÜ: Optionen</string>
+    <string id="HintSaved">Gespeichert ✓ · START: neu</string>
+    <string id="CadenceNoSensor">Kadenz: kein Sensor</string>
+    <string id="CadenceSearching">Kadenz: Suche läuft</string>
+    <string id="NoGps">GPS: kein Empfang</string>
+
+    <!-- Menüs -->
+    <string id="MenuSave">Speichern &amp; beenden</string>
+    <string id="MenuDiscard">Aufnahme verwerfen</string>
+    <string id="MenuResume">Weiter aufzeichnen</string>
+    <string id="MenuCancel">Abbrechen</string>
+    <string id="MenuNew">Neue Aktivität</string>
+    <string id="MenuTitle">MultiSportTri</string>
+
+    <!-- Einstellungs-Gruppen -->
+    <string id="SettingsSwimTitle">Schwimmen - Datenfelder</string>
+    <string id="SettingsBikeTitle">Radfahren - Datenfelder</string>
+    <string id="SettingsRunTitle">Laufen - Datenfelder</string>
+    <string id="SettingsSlot1">Feld 1</string>
+    <string id="SettingsSlot2">Feld 2</string>
+    <string id="SettingsSlot3">Feld 3</string>
+    <string id="SettingsSlot4">Feld 4</string>
+
+    <!-- FIT-Entwicklerfeld-Metadaten -->
+    <string id="FitPhaseLabel">Phase</string>
+    <string id="FitPhaseLapLabel">Phase (Runde)</string>
+    <string id="FitPhaseChart">Phase</string>
+    <string id="FitPhaseUnits">-</string>
+    <string id="FitGlucoseChart">Glukose</string>
+    <string id="FitGlucoseLabel">Glukose</string>
+    <string id="FitGlucoseUnits">mg/dl</string>
+    <string id="FitCadenceChart">Trittfrequenz</string>
+    <string id="FitCadenceLabel">Trittfrequenz</string>
+    <string id="FitCadenceUnits">rpm</string>
+</strings>

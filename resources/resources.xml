@@ -1,0 +1,20 @@
+<resources>
+    <fitContributions>
+        <!-- Per-second phase (record messages, shown as chart in Garmin Connect):
+             1 = Swim, 2 = Transition 1, 3 = Bike, 4 = Transition 2, 5 = Run -->
+        <fitField id="0" displayInChart="true" sortOrder="1" precision="0"
+                  chartTitle="@Strings.FitPhaseChart" dataLabel="@Strings.FitPhaseLabel"
+                  unitLabel="@Strings.FitPhaseUnits" fillColor="#1E90FF" />
+        <!-- Per-lap phase (lap messages, shown in the lap table in Garmin Connect) -->
+        <fitField id="1" displayInActivityLaps="true" sortOrder="2" precision="0"
+                  dataLabel="@Strings.FitPhaseLapLabel" unitLabel="@Strings.FitPhaseUnits" />
+        <!-- Per-second CGM glucose in mg/dl (record messages, shown as chart) -->
+        <fitField id="2" displayInChart="true" sortOrder="3" precision="0"
+                  chartTitle="@Strings.FitGlucoseChart" dataLabel="@Strings.FitGlucoseLabel"
+                  unitLabel="@Strings.FitGlucoseUnits" fillColor="#FF9800" />
+        <!-- Per-second bike cadence in rpm (record messages, shown as chart) -->
+        <fitField id="3" displayInChart="true" sortOrder="4" precision="0"
+                  chartTitle="@Strings.FitCadenceChart" dataLabel="@Strings.FitCadenceLabel"
+                  unitLabel="@Strings.FitCadenceUnits" fillColor="#00C853" />
+    </fitContributions>
+</resources>

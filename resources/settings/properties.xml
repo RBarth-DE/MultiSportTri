@@ -1,0 +1,172 @@
+<resources>
+    <properties>
+        <!-- Swim: 4 configurable data fields -->
+        <property id="swimField1" type="number">4</property>
+        <property id="swimField2" type="number">3</property>
+        <property id="swimField3" type="number">5</property>
+        <property id="swimField4" type="number">1</property>
+        <!-- Bike: 4 configurable data fields -->
+        <property id="bikeField1" type="number">4</property>
+        <property id="bikeField2" type="number">6</property>
+        <property id="bikeField3" type="number">2</property>
+        <property id="bikeField4" type="number">1</property>
+        <!-- Run: 4 configurable data fields -->
+        <property id="runField1" type="number">4</property>
+        <property id="runField2" type="number">3</property>
+        <property id="runField3" type="number">5</property>
+        <property id="runField4" type="number">1</property>
+    </properties>
+
+    <settings>
+        <group id="SwimFields" title="@Strings.SettingsSwimTitle">
+            <setting propertyKey="@Properties.swimField1" title="@Strings.SettingsSlot1">
+                <settingConfig type="list">
+                    <listEntry value="0">@Strings.FieldNone</listEntry>
+                    <listEntry value="1">@Strings.FieldHeartRate</listEntry>
+                    <listEntry value="2">@Strings.FieldCadence</listEntry>
+                    <listEntry value="3">@Strings.FieldDistance</listEntry>
+                    <listEntry value="4">@Strings.FieldTime</listEntry>
+                    <listEntry value="5">@Strings.FieldPace</listEntry>
+                    <listEntry value="6">@Strings.FieldSpeed</listEntry>
+                    <listEntry value="8">@Strings.FieldCgm</listEntry>
+                </settingConfig>
+            </setting>
+            <setting propertyKey="@Properties.swimField2" title="@Strings.SettingsSlot2">
+                <settingConfig type="list">
+                    <listEntry value="0">@Strings.FieldNone</listEntry>
+                    <listEntry value="1">@Strings.FieldHeartRate</listEntry>
+                    <listEntry value="2">@Strings.FieldCadence</listEntry>
+                    <listEntry value="3">@Strings.FieldDistance</listEntry>
+                    <listEntry value="4">@Strings.FieldTime</listEntry>
+                    <listEntry value="5">@Strings.FieldPace</listEntry>
+                    <listEntry value="6">@Strings.FieldSpeed</listEntry>
+                    <listEntry value="8">@Strings.FieldCgm</listEntry>
+                </settingConfig>
+            </setting>
+            <setting propertyKey="@Properties.swimField3" title="@Strings.SettingsSlot3">
+                <settingConfig type="list">
+                    <listEntry value="0">@Strings.FieldNone</listEntry>
+                    <listEntry value="1">@Strings.FieldHeartRate</listEntry>
+                    <listEntry value="2">@Strings.FieldCadence</listEntry>
+                    <listEntry value="3">@Strings.FieldDistance</listEntry>
+                    <listEntry value="4">@Strings.FieldTime</listEntry>
+                    <listEntry value="5">@Strings.FieldPace</listEntry>
+                    <listEntry value="6">@Strings.FieldSpeed</listEntry>
+                    <listEntry value="8">@Strings.FieldCgm</listEntry>
+                </settingConfig>
+            </setting>
+            <setting propertyKey="@Properties.swimField4" title="@Strings.SettingsSlot4">
+                <settingConfig type="list">
+                    <listEntry value="0">@Strings.FieldNone</listEntry>
+                    <listEntry value="1">@Strings.FieldHeartRate</listEntry>
+                    <listEntry value="2">@Strings.FieldCadence</listEntry>
+                    <listEntry value="3">@Strings.FieldDistance</listEntry>
+                    <listEntry value="4">@Strings.FieldTime</listEntry>
+                    <listEntry value="5">@Strings.FieldPace</listEntry>
+                    <listEntry value="6">@Strings.FieldSpeed</listEntry>
+                    <listEntry value="8">@Strings.FieldCgm</listEntry>
+                </settingConfig>
+            </setting>
+        </group>
+        <group id="BikeFields" title="@Strings.SettingsBikeTitle">
+            <setting propertyKey="@Properties.bikeField1" title="@Strings.SettingsSlot1">
+                <settingConfig type="list">
+                    <listEntry value="0">@Strings.FieldNone</listEntry>
+                    <listEntry value="1">@Strings.FieldHeartRate</listEntry>
+                    <listEntry value="2">@Strings.FieldCadence</listEntry>
+                    <listEntry value="3">@Strings.FieldDistance</listEntry>
+                    <listEntry value="4">@Strings.FieldTime</listEntry>
+                    <listEntry value="5">@Strings.FieldPace</listEntry>
+                    <listEntry value="6">@Strings.FieldSpeed</listEntry>
+                    <listEntry value="8">@Strings.FieldCgm</listEntry>
+                </settingConfig>
+            </setting>
+            <setting propertyKey="@Properties.bikeField2" title="@Strings.SettingsSlot2">
+                <settingConfig type="list">
+                    <listEntry value="0">@Strings.FieldNone</listEntry>
+                    <listEntry value="1">@Strings.FieldHeartRate</listEntry>
+                    <listEntry value="2">@Strings.FieldCadence</listEntry>
+                    <listEntry value="3">@Strings.FieldDistance</listEntry>
+                    <listEntry value="4">@Strings.FieldTime</listEntry>
+                    <listEntry value="5">@Strings.FieldPace</listEntry>
+                    <listEntry value="6">@Strings.FieldSpeed</listEntry>
+                    <listEntry value="8">@Strings.FieldCgm</listEntry>
+                </settingConfig>
+            </setting>
+            <setting propertyKey="@Properties.bikeField3" title="@Strings.SettingsSlot3">
+                <settingConfig type="list">
+                    <listEntry value="0">@Strings.FieldNone</listEntry>
+                    <listEntry value="1">@Strings.FieldHeartRate</listEntry>
+                    <listEntry value="2">@Strings.FieldCadence</listEntry>
+                    <listEntry value="3">@Strings.FieldDistance</listEntry>
+                    <listEntry value="4">@Strings.FieldTime</listEntry>
+                    <listEntry value="5">@Strings.FieldPace</listEntry>
+                    <listEntry value="6">@Strings.FieldSpeed</listEntry>
+                    <listEntry value="8">@Strings.FieldCgm</listEntry>
+                </settingConfig>
+            </setting>
+            <setting propertyKey="@Properties.bikeField4" title="@Strings.SettingsSlot4">
+                <settingConfig type="list">
+                    <listEntry value="0">@Strings.FieldNone</listEntry>
+                    <listEntry value="1">@Strings.FieldHeartRate</listEntry>
+                    <listEntry value="2">@Strings.FieldCadence</listEntry>
+                    <listEntry value="3">@Strings.FieldDistance</listEntry>
+                    <listEntry value="4">@Strings.FieldTime</listEntry>
+                    <listEntry value="5">@Strings.FieldPace</listEntry>
+                    <listEntry value="6">@Strings.FieldSpeed</listEntry>
+                    <listEntry value="8">@Strings.FieldCgm</listEntry>
+                </settingConfig>
+            </setting>
+        </group>
+        <group id="RunFields" title="@Strings.SettingsRunTitle">
+            <setting propertyKey="@Properties.runField1" title="@Strings.SettingsSlot1">
+                <settingConfig type="list">
+                    <listEntry value="0">@Strings.FieldNone</listEntry>
+                    <listEntry value="1">@Strings.FieldHeartRate</listEntry>
+                    <listEntry value="2">@Strings.FieldCadence</listEntry>
+                    <listEntry value="3">@Strings.FieldDistance</listEntry>
+                    <listEntry value="4">@Strings.FieldTime</listEntry>
+                    <listEntry value="5">@Strings.FieldPace</listEntry>
+                    <listEntry value="6">@Strings.FieldSpeed</listEntry>
+                    <listEntry value="8">@Strings.FieldCgm</listEntry>
+                </settingConfig>
+            </setting>
+            <setting propertyKey="@Properties.runField2" title="@Strings.SettingsSlot2">
+                <settingConfig type="list">
+                    <listEntry value="0">@Strings.FieldNone</listEntry>
+                    <listEntry value="1">@Strings.FieldHeartRate</listEntry>
+                    <listEntry value="2">@Strings.FieldCadence</listEntry>
+                    <listEntry value="3">@Strings.FieldDistance</listEntry>
+                    <listEntry value="4">@Strings.FieldTime</listEntry>
+                    <listEntry value="5">@Strings.FieldPace</listEntry>
+                    <listEntry value="6">@Strings.FieldSpeed</listEntry>
+                    <listEntry value="8">@Strings.FieldCgm</listEntry>
+                </settingConfig>
+            </setting>
+            <setting propertyKey="@Properties.runField3" title="@Strings.SettingsSlot3">
+                <settingConfig type="list">
+                    <listEntry value="0">@Strings.FieldNone</listEntry>
+                    <listEntry value="1">@Strings.FieldHeartRate</listEntry>
+                    <listEntry value="2">@Strings.FieldCadence</listEntry>
+                    <listEntry value="3">@Strings.FieldDistance</listEntry>
+                    <listEntry value="4">@Strings.FieldTime</listEntry>
+                    <listEntry value="5">@Strings.FieldPace</listEntry>
+                    <listEntry value="6">@Strings.FieldSpeed</listEntry>
+                    <listEntry value="8">@Strings.FieldCgm</listEntry>
+                </settingConfig>
+            </setting>
+            <setting propertyKey="@Properties.runField4" title="@Strings.SettingsSlot4">
+                <settingConfig type="list">
+                    <listEntry value="0">@Strings.FieldNone</listEntry>
+                    <listEntry value="1">@Strings.FieldHeartRate</listEntry>
+                    <listEntry value="2">@Strings.FieldCadence</listEntry>
+                    <listEntry value="3">@Strings.FieldDistance</listEntry>
+                    <listEntry value="4">@Strings.FieldTime</listEntry>
+                    <listEntry value="5">@Strings.FieldPace</listEntry>
+                    <listEntry value="6">@Strings.FieldSpeed</listEntry>
+                    <listEntry value="8">@Strings.FieldCgm</listEntry>
+                </settingConfig>
+            </setting>
+        </group>
+    </settings>
+</resources>
